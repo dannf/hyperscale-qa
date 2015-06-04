@@ -1,0 +1,22 @@
+- job:
+    name: helloworld
+    description: 'Hello World.'
+    builders:
+        - shell: 'echo Hello World!'
+
+- job-template:
+    name: '{name}-tests'
+    description: 'Tests for {name}'
+    builders:
+        - shell: '/home/ubuntu/qa/tests/hello.sh {name}'
+        - shell: '/home/ubuntu/qa/tests/goodbye.sh {name}'
+
+- project:
+    name: mcdonalds
+    jobs:
+      - '{name}-tests'
+
+- project:
+    name: burgerking
+    jobs:
+      - '{name}-tests'

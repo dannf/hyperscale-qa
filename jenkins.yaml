@@ -17,6 +17,6 @@
       - '{name}-tests'
 
 - project:
-    name: burgerking
+    name: wendys
     jobs:
       - '{name}-tests'
